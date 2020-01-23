@@ -20,12 +20,12 @@ var MapBase = {
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
         attribution: '<a href="https://www.rockstargames.com/" target="_blank">Rockstar Games</a>'
       }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/detailed/{z}/{x}_{y}.jpg', {
+      L.tileLayer('assets/maps/detailed/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
         attribution: '<a href="https://rdr2map.com/" target="_blank">RDR2Map</a>'
       }),
-      L.tileLayer((isLocalHost() ? '' : 'https://jeanropke.b-cdn.net/') + 'assets/maps/darkmode/{z}/{x}_{y}.jpg', {
+      L.tileLayer('assets/maps/darkmode/{z}/{x}_{y}.jpg', {
         noWrap: true,
         bounds: L.latLngBounds(L.latLng(-144, 0), L.latLng(0, 176)),
         attribution: '<a href="https://github.com/TDLCTV" target="_blank">TDLCTV</a>'
