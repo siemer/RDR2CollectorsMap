@@ -88,12 +88,12 @@ function init() {
   Language.setMenuLanguage();
   Pins.addToMap();
   changeCursor();
-  itemsCollectionsWeekly.then(Cycles.load);
   Inventory.init();
   MapBase.loadFastTravels();
   MadamNazar.loadMadamNazar();
   const treasureFinished = Treasure.init();
-  MapBase.loadMarkers();
+  const markers = itemsCollectionsWeekly.then(MapBase.loadMarkers);
+  Promise.all([itemsCollectionsWeekly, markers]).then(Cycles.load);
   Routes.init();
   // depends on MapBase, Treasure, Pins
   // via `promise.then()`, the Treasure dependency is _guaranteed_ to have finished
